@@ -2,7 +2,7 @@
 name = "randlib"
 version = "0.1.3"
 edition = "2021"
-license-file = "LICENSE"
+license = "MIT"
 authors = ["Ernest1338"]
 description = "Dependencyless random value generator using pointer addresses and time"
 repository = "https://github.com/Ernest1338/randlib"
