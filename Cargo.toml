@@ -5,6 +5,7 @@ edition = "2021"
 license = "MIT"
 description = "Dependencyless random value generator using pointer addresses and time."
 repository = "https://github.com/Ernest1338/randlib"
+documentation = "https://docs.rs/randlib"
 readme = "README.md"
 keywords = ["random", "rand"]
 
