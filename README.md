@@ -1,2 +1,3 @@
 # randlib
-Generate random values from pointer addresses. Written in Rust.
+
+Dependencyless random value generator using pointer addresses and time.

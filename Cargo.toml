@@ -3,12 +3,10 @@ name = "randlib"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "Generate random values from pointer addresses and time."
+description = "Dependencyless random value generator using pointer addresses and time."
 repository = "https://github.com/Ernest1338/randlib"
 readme = "README.md"
 keywords = ["random", "rand"]
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
 name = "randlib"
