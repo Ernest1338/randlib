@@ -2,15 +2,13 @@
 name = "randlib"
 version = "0.1.2"
 edition = "2021"
-license = "MIT"
-description = "Dependencyless random value generator using pointer addresses and time."
+license-file = "LICENSE"
+authors = ["Ernest1338"]
+description = "Dependencyless random value generator using pointer addresses and time"
 repository = "https://github.com/Ernest1338/randlib"
+homepage = "https://github.com/Ernest1338/randlib"
 documentation = "https://docs.rs/randlib"
 readme = "README.md"
 keywords = ["random", "rand"]
-
-[lib]
-name = "randlib"
-path = "src/lib.rs"
 
 [dependencies]
