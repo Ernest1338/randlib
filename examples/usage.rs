@@ -15,6 +15,10 @@ fn main() {
         println!("u128 MAX:\t{}\t RNG: {}", u128::MAX, rng.rand_u128());
         println!("i128 MAX:\t{}\t RNG: {}", i128::MAX, rng.rand_i128());
         println!("usize MAX:\t{}\t\t\t RNG: {}", usize::MAX, rng.rand_usize());
+        println!(
+            "random usize in range 0 to 10 (inclusive):\t\t RNG: {}",
+            rng.rand_range(0, 10)
+        );
         println!("bool RNG:\t{:?}", rng.rand_bool());
     }
 }

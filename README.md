@@ -26,6 +26,7 @@ fn main() {
 	println!("random u128: {}", rng.rand_u128());
 	println!("random i128: {}", rng.rand_i128());
 	println!("random usize: {}", rng.rand_usize());
+    println!("random usize in range 0 to 10: {}", rng.rand_range(0, 10));
 	println!("random bool: {:?}", rng.rand_bool());
 }
 ```

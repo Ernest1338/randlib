@@ -8,10 +8,10 @@
 //! # Usage
 //!
 //! Basic usage
-//! 
+//!
 //! ```rust
 //! use randlib::Rand;
-//! 
+//!
 //! fn main() {
 //!     let mut rng = Rand::new();
 //!     println!("random usize: {}", rng.rand());
@@ -26,14 +26,14 @@
 //!     println!("random u128: {}", rng.rand_u128());
 //!     println!("random i128: {}", rng.rand_i128());
 //!     println!("random usize: {}", rng.rand_usize());
+//!     println!("random usize in range 0 to 10: {}", rng.rand_range(0, 10));
 //!     println!("random bool: {:?}", rng.rand_bool());
 //! }
 //! ```
-//! 
+//!
 //! # LICENSE
 //!
 //! This project is distributed under MIT license.
-
 
 // Big prime numbers
 const PRIME_A: u64 = 1442695040888963407;
@@ -272,5 +272,21 @@ impl Rand {
         ((self.seed >> 32) as i128)
             .wrapping_mul(PRIME_A as i128)
             .wrapping_mul(PRIME_B as i128)
+    }
+
+    /// Generate random (usize) value in a range
+    /// from min: usize (inclusive)
+    /// to max: usize (inclusive)
+    ///
+    /// # Examples
+    ///
+    /// ```no_run
+    /// use randlib::Rand;
+    ///
+    /// let mut rng = Rand::new();
+    /// let random_number: usize = rng.rand_range(0, 10);
+    /// ```
+    pub fn rand_range(&mut self, min: usize, max: usize) -> usize {
+        self.rand() % (max + 1 - min) + min
     }
 }
