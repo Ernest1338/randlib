@@ -14,6 +14,7 @@ use randlib::Rand;
 
 fn main() {
     let mut rng = Rand::new();
+	println!("random usize: {}", rng.rand());
 	println!("random u8: {}", rng.rand_u8());
 	println!("random i8: {}", rng.rand_i8());
 	println!("random u16: {}", rng.rand_u16());

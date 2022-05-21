@@ -3,6 +3,7 @@ use randlib::Rand;
 fn main() {
     let mut rng = Rand::new();
     for _ in 0..3 {
+        println!("usize MAX:\t{}\t\t\t RNG: {}", usize::MAX, rng.rand());
         println!("u8 MAX:\t\t{}\t\t\t\t\t RNG: {}", u8::MAX, rng.rand_u8());
         println!("i8 MAX:\t\t{}\t\t\t\t\t RNG: {}", i8::MAX, rng.rand_i8());
         println!("u16 MAX:\t{}\t\t\t\t\t RNG: {}", u16::MAX, rng.rand_u16());

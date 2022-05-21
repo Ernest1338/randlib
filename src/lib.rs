@@ -14,6 +14,7 @@
 //! 
 //! fn main() {
 //!     let mut rng = Rand::new();
+//!     println!("random usize: {}", rng.rand());
 //!     println!("random u8: {}", rng.rand_u8());
 //!     println!("random i8: {}", rng.rand_i8());
 //!     println!("random u16: {}", rng.rand_u16());
@@ -73,7 +74,7 @@ impl Rand {
         }
     }
 
-    /// Generate random value (u32)
+    /// Generate random value (usize)
     ///
     /// # Examples
     ///
@@ -81,11 +82,11 @@ impl Rand {
     /// use randlib::Rand;
     ///
     /// let mut rng = Rand::new();
-    /// let random_number: u32 = rng.rand();
+    /// let random_number: usize = rng.rand();
     /// ```
-    pub fn rand(&mut self) -> u32 {
+    pub fn rand(&mut self) -> usize {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
-        (self.seed >> 32) as u32
+        (self.seed >> 32).wrapping_mul(PRIME_A) as usize
     }
 
     /// Generate random bool value
