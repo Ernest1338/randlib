@@ -21,4 +21,8 @@ fn main() {
         );
         println!("bool RNG:\t{:?}", rng.rand_bool());
     }
+    let mut vector: Vec<usize> = vec![1, 2, 3, 4, 5];
+    println!("{:?}", vector);
+    rng.shuffle_vec(&mut vector);
+    println!("{:?}", vector);
 }

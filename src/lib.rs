@@ -7,7 +7,7 @@
 //!
 //! # Usage
 //!
-//! Basic usage
+//! Basic usage (checkout the examples/usage.rs file for more examples)
 //!
 //! ```rust
 //! use randlib::Rand;
@@ -26,7 +26,6 @@
 //!     println!("random u128: {}", rng.rand_u128());
 //!     println!("random i128: {}", rng.rand_i128());
 //!     println!("random usize: {}", rng.rand_usize());
-//!     println!("random usize in range 0 to 10: {}", rng.rand_range(0, 10));
 //!     println!("random bool: {:?}", rng.rand_bool());
 //! }
 //! ```
@@ -288,5 +287,25 @@ impl Rand {
     /// ```
     pub fn rand_range(&mut self, min: usize, max: usize) -> usize {
         self.rand() % (max + 1 - min) + min
+    }
+
+    /// Shuffle a Vector of generic type
+    ///
+    /// # Examples
+    ///
+    /// ```no_run
+    /// use randlib::Rand;
+    ///
+    /// let mut rng = Rand::new();
+    /// let mut vector: Vec<usize> = vec![1, 2, 3];
+    /// rng.shuffle_vec(&mut vector);
+    /// ```
+    pub fn shuffle_vec<T>(&mut self, vector: &mut Vec<T>) {
+        let vector_len = vector.len();
+        for _ in 0..vector_len {
+            let rand_index1 = self.rand_range(0, vector_len - 1);
+            let rand_index2 = self.rand_range(0, vector_len - 1);
+            vector.swap(rand_index1, rand_index2);
+        }
     }
 }
