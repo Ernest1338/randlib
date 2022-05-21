@@ -14,17 +14,17 @@ use randlib::Rand;
 
 fn main() {
     let mut rng = Rand::new();
-	println!("u8 MAX:\t\t{}\t\t\t\t\t RNG: {}", u8::MAX, rng.rand_u8());
-	println!("i8 MAX:\t\t{}\t\t\t\t\t RNG: {}", i8::MAX, rng.rand_i8());
-	println!("u16 MAX:\t{}\t\t\t\t\t RNG: {}", u16::MAX, rng.rand_u16());
-	println!("i16 MAX:\t{}\t\t\t\t\t RNG: {}", i16::MAX, rng.rand_i16());
-	println!("u32 MAX:\t{}\t\t\t\t RNG: {}", u32::MAX, rng.rand_u32());
-	println!("i32 MAX:\t{}\t\t\t\t RNG: {}", i32::MAX, rng.rand_i32());
-	println!("u64 MAX:\t{}\t\t\t RNG: {}", u64::MAX, rng.rand_u64());
-	println!("i64 MAX:\t{}\t\t\t RNG: {}", i64::MAX, rng.rand_i64());
-	println!("u128 MAX:\t{}\t RNG: {}", u128::MAX, rng.rand_u128());
-	println!("i128 MAX:\t{}\t RNG: {}", i128::MAX, rng.rand_i128());
-	println!("bool RNG:\t{:?}", rng.rand_bool());
+	println!("random u8: {}", rng.rand_u8());
+	println!("random i8: {}", rng.rand_i8());
+	println!("random u16: {}", rng.rand_u16());
+	println!("random i16: {}", rng.rand_i16());
+	println!("random u32: {}", rng.rand_u32());
+	println!("random i32: {}", rng.rand_i32());
+	println!("random u64: {}", rng.rand_u64());
+	println!("random i64: {}", rng.rand_i64());
+	println!("random u128: {}", rng.rand_u128());
+	println!("random i128: {}", rng.rand_i128());
+	println!("random bool: {:?}", rng.rand_bool());
 }
 ```
 
