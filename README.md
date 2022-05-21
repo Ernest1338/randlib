@@ -25,6 +25,7 @@ fn main() {
 	println!("random i64: {}", rng.rand_i64());
 	println!("random u128: {}", rng.rand_u128());
 	println!("random i128: {}", rng.rand_i128());
+	println!("random usize: {}", rng.rand_usize());
 	println!("random bool: {:?}", rng.rand_bool());
 }
 ```

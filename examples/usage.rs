@@ -14,6 +14,7 @@ fn main() {
         println!("i64 MAX:\t{}\t\t\t RNG: {}", i64::MAX, rng.rand_i64());
         println!("u128 MAX:\t{}\t RNG: {}", u128::MAX, rng.rand_u128());
         println!("i128 MAX:\t{}\t RNG: {}", i128::MAX, rng.rand_i128());
+        println!("usize MAX:\t{}\t\t\t RNG: {}", usize::MAX, rng.rand_usize());
         println!("bool RNG:\t{:?}", rng.rand_bool());
     }
 }
