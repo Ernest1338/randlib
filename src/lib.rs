@@ -84,6 +84,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_number: usize = rng.rand();
     /// ```
+    #[inline]
     pub fn rand(&mut self) -> usize {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
         (self.seed >> 32).wrapping_mul(PRIME_A) as usize
@@ -99,6 +100,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_bool: bool = rng.rand_bool();
     /// ```
+    #[inline]
     pub fn rand_bool(&mut self) -> bool {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
         (self.seed >> 32) % 2 == 0
@@ -114,6 +116,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_number: usize = rng.rand_usize();
     /// ```
+    #[inline]
     pub fn rand_usize(&mut self) -> usize {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
         (self.seed >> 32).wrapping_mul(PRIME_A) as usize
@@ -129,6 +132,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_u8: u8 = rng.rand_u8();
     /// ```
+    #[inline]
     pub fn rand_u8(&mut self) -> u8 {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
         (self.seed >> 32) as u8
@@ -144,6 +148,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_u16: u16 = rng.rand_u16();
     /// ```
+    #[inline]
     pub fn rand_u16(&mut self) -> u16 {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
         (self.seed >> 32) as u16
@@ -159,6 +164,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_u32: u32 = rng.rand_u32();
     /// ```
+    #[inline]
     pub fn rand_u32(&mut self) -> u32 {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
         (self.seed >> 32) as u32
@@ -174,6 +180,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_u64: u64 = rng.rand_u64();
     /// ```
+    #[inline]
     pub fn rand_u64(&mut self) -> u64 {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
         (self.seed >> 32).wrapping_mul(PRIME_A) as u64
@@ -189,6 +196,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_u128: u128 = rng.rand_u128();
     /// ```
+    #[inline]
     pub fn rand_u128(&mut self) -> u128 {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
         ((self.seed >> 32) as u128)
@@ -206,6 +214,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_i8: i8 = rng.rand_i8();
     /// ```
+    #[inline]
     pub fn rand_i8(&mut self) -> i8 {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
         (self.seed >> 32) as i8
@@ -221,6 +230,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_i16: i16 = rng.rand_i16();
     /// ```
+    #[inline]
     pub fn rand_i16(&mut self) -> i16 {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
         (self.seed >> 32) as i16
@@ -236,6 +246,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_i32: i32 = rng.rand_i32();
     /// ```
+    #[inline]
     pub fn rand_i32(&mut self) -> i32 {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
         (self.seed >> 32) as i32
@@ -251,6 +262,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_i64: i64 = rng.rand_i64();
     /// ```
+    #[inline]
     pub fn rand_i64(&mut self) -> i64 {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
         (self.seed >> 32).wrapping_mul(PRIME_A) as i64
@@ -266,6 +278,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_i128: i128 = rng.rand_i128();
     /// ```
+    #[inline]
     pub fn rand_i128(&mut self) -> i128 {
         self.seed = PRIME_A.wrapping_mul(self.seed).wrapping_add(PRIME_B);
         ((self.seed >> 32) as i128)
@@ -285,6 +298,7 @@ impl Rand {
     /// let mut rng = Rand::new();
     /// let random_number: usize = rng.rand_range(0, 10);
     /// ```
+    #[inline]
     pub fn rand_range(&mut self, min: usize, max: usize) -> usize {
         self.rand() % (max + 1 - min) + min
     }
@@ -300,6 +314,7 @@ impl Rand {
     /// let mut vector: Vec<usize> = vec![1, 2, 3];
     /// rng.shuffle_vec(&mut vector);
     /// ```
+    #[inline]
     pub fn shuffle_vec<T>(&mut self, vector: &mut Vec<T>) {
         let vector_len = vector.len();
         for _ in 0..vector_len {
