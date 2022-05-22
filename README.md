@@ -5,6 +5,17 @@ Dependency-less random value generator using pointer addresses and time.
 The generator is using the LCG algorithm seed by a pointer address multiplied by
 UNIX_EPOCH.
 
+# Features
+
+- Functions returning random types:
+	- u8, u16, u32, u64, u128
+	- i8, i16, i32, i64, i128
+	- usize
+	- bool
+- Get a random value in a range
+- Shuffle elements of a vector
+- Get a random element of a vector
+
 # Usage
 
 Basic usage (checkout the examples/usage.rs file for more examples)
