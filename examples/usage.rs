@@ -25,4 +25,5 @@ fn main() {
     println!("before shuffling: {:?}", vector);
     rng.shuffle_vec(&mut vector);
     println!(" after shuffling: {:?}", vector);
+    println!("  random element: {}", rng.rand_element(&vector));
 }

@@ -323,4 +323,20 @@ impl Rand {
             vector.swap(rand_index1, rand_index2);
         }
     }
+
+    /// Returns a random element from a vector
+    ///
+    /// # Examples
+    ///
+    /// ```no_run
+    /// use randlib::Rand;
+    ///
+    /// let mut rng = Rand::new();
+    /// let mut vector: Vec<usize> = vec![1, 2, 3];
+    /// println!("{}", rng.rand_element(&vector));
+    /// ```
+    #[inline]
+    pub fn rand_element<'a, T>(&'a mut self, vector: &'a Vec<T>) -> &T {
+        &vector[self.rand_range(0, vector.len() - 1)]
+    }
 }
