@@ -35,12 +35,12 @@
 //! This project is distributed under MIT license.
 
 // Big prime numbers
-const PRIME_A: u64 = 1442695040888963407;
-const PRIME_B: u64 = 6364136223846793005;
+const PRIME_A: u128 = 1442695040888963407;
+const PRIME_B: u128 = 6364136223846793005;
 
 /// Rand Struct
 pub struct Rand {
-    seed: u64,
+    seed: u128,
 }
 
 /// Default Rand implementation
@@ -65,11 +65,11 @@ impl Rand {
         let rand_ptr: *const i32 = &123;
         Rand {
             // Seed the RNG with a pointer address multiplied by UNIX_EPOCH
-            seed: (rand_ptr as u64).wrapping_mul(
+            seed: (rand_ptr as u128).wrapping_mul(
                 std::time::SystemTime::now()
                     .duration_since(std::time::UNIX_EPOCH)
                     .unwrap()
-                    .as_secs(),
+                    .as_nanos(),
             ),
         }
     }
